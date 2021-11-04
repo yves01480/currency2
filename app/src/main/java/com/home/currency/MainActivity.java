@@ -13,20 +13,26 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText ed_ntd;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ed_ntd = findViewById(R.id.NTD);
-    }
+
+            }
+
 
 
     public void go(View view){
-        if (ed_ntd != null && ed_ntd.equals("")){
-            printValue();
+        Boolean tryEmpty = ed_ntd.getText().toString().isEmpty();
 
-        }else{
+        if (tryEmpty)
+        {
             printEmpty();
+        }
+        else{
+            printValue();
         }
     }
 
@@ -48,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 .setMessage("Please enter your NTD amount")
                 .setPositiveButton("ok",null)
                 .show();
+
 
     }
 
